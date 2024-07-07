@@ -7,24 +7,21 @@
 
 
 def canUnlockAll(boxes):
-  """
+    """
     function to check the unlock-ability of the boxes.
-  """
-  if not isinstance(boxes, list):
-    return False
-  elif len(boxes) == 0:
-    return False
+    """
+    if not isinstance(boxes, list) or len(boxes) == 0:
+        return False
 
+    for key in range(1, len(boxes) - 1):
+        boxes_checked = False
 
-  for key in range(1, len(boxes) - 1):
-    boxes_checked = False
+        for i in range(len(boxes)):
+            boxes_checked = key in boxes[i] and i != key
+            if boxes_checked:
+                break
 
-    for i in range(len(boxes)):
-      boxes_checked = key in boxes[i] and i != key
-      if boxes_checked:
-        break
+        if boxes_checked is False:
+            return boxes_checked
 
-    if boxes_checked is False:
-      return boxes_checked
-
-  return True
+    return True
