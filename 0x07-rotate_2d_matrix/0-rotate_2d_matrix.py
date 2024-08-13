@@ -12,5 +12,5 @@ def rotate_2d_matrix(matrix):
     """
         rotate a n x n matrix
     """
-    for x,y in enumerate(zip(*reversed(matrix))):
+    for x, y in enumerate(zip(*reversed(matrix))):
         matrix[x] = list(y)
