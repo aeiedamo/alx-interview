@@ -42,7 +42,7 @@ const getCharNames = async () => {
   await requestNames();
 
   for (const n of names) {
-      process.stdout.write(n + '\n');
+    process.stdout.write(n + '\n');
   }
 };
 
